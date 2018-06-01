@@ -1,0 +1,8 @@
+checkout:
+  post:
+    - mvn package
+    - cp -R ./target/SimpleFlyEnglish-1.0.0.jar $CIRCLE_ARTIFACTS
+
+machine:
+  java:
+    version: oraclejdk8
