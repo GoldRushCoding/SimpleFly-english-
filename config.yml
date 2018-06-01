@@ -22,6 +22,8 @@ jobs:
     
     steps:
       - checkout
+      
+
 
       # Download and cache dependencies
       - restore_cache:
@@ -40,10 +42,8 @@ jobs:
       # run tests!
       - run: mvn integration-test
       
-      working_directory: /tmp
-    steps:
-      - run:
-          name: Creating Dummy Artifacts
+            - run:
+          name: Creating Atrifacts.
           command: |
             echo "my artifact file" > /tmp/artifact-1;
             mkdir /tmp/artifacts;
@@ -55,4 +55,4 @@ jobs:
 
       - store_artifacts:
           path: /tmp/artifacts
-
+      
