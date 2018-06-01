@@ -36,6 +36,9 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
+          
+      - store_artifacts:
+    path: /repo/test-results
         
       # run tests!
       - run: mvn integration-test
